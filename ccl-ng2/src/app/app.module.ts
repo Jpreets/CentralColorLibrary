@@ -1,3 +1,4 @@
+import { AuthService } from './shared/service/auth.service';
 // Angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -9,17 +10,13 @@ import { AppRoutingModule } from './app.routing';
 
 // Components
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './modules/dashboard/dashboard.component';
-import { AccountComponent } from './modules/account/account.component';
 
 // Services
-
+import { AuthGuard } from './shared/guard';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DashboardComponent,
-    AccountComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +24,10 @@ import { AccountComponent } from './modules/account/account.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

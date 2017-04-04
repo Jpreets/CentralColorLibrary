@@ -1,6 +1,8 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { AuthGuard } from './shared/guard';
+
 // Application Routes
 export const APP_ROUTES: Routes = [
     {
@@ -10,15 +12,15 @@ export const APP_ROUTES: Routes = [
     },
     {
         path: 'login',
-        loadChildren: './modules/account/login'
+        loadChildren: './modules/account/account.module#AccountModule'
     },
     {
         path: 'dashboard',
-        loadChildren: './modules/account/dashboard/',
+        loadChildren: './modules/dashboard/dashboard.module#DashboardModule',
         data: {
             title: 'Home'
         },
-        //canActivate: [AuthGuard]
+        canActivate: [AuthGuard]
     },
     {
         path: '**',

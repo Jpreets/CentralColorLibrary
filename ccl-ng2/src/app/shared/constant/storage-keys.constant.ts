@@ -1,14 +1,13 @@
 /**
- * storage-key.constant.ts
+ * storage-keys.constant.ts
  * 
- * This file contains strings constants that ar application wides. 
+ * This file contains all the identifiers as strings that the application uses. 
  */
 
 /**
  *  The StorageKeys object
  */
 export const StorageKeys = {
-    LOGIN_LAYOUT_BG: 'loginBg',
     AUTH_TOKEN: 'token',
     LOGGED_IN_USER: 'user'
 };

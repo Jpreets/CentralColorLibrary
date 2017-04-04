@@ -1,0 +1,33 @@
+<div id="login-reg-card" class="card-group">
+  <div class="card p-1 br-2">
+    
+    <div class="card-block">
+      <form name="login-form" novalidate="true" [formGroup]="_loginForm" (submit)="onLoginFormSubmit()">
+        <h4 class="text-theme text-700 text-xs-center">LOGIN</h4>
+        <span class="signin-muted-text text-theme text-500 d-block text-xs-center">SIGN IN TO YOUR ACCOUNT</span>
+        <div class="form-group my-1">
+          <input type="email" name="email" class="login-input" autocomplete="off" required="required" formControlName="email" [ngClass]="{'danger': _loginForm.controls?.email.dirty && _loginForm.controls?.email.invalid}">
+          <span class="input-label text-theme">EMAIL</span>
+        </div>
+        <div class="form-group my-1">
+          <input type="password" name="password" class="login-input" required="required" formControlName="password" [ngClass]="{'danger': _loginForm.controls?.password.dirty && _loginForm.controls?.password.invalid}">
+          <span class="input-label text-theme">PASSWORD</span>
+        </div>
+        <div class="row pt-1">
+          <div class="col-xs-12">
+            <button type="submit" name="btn-login" class="btn btn-block btn-primary px-2" [disabled]="_loginForm.invalid || _authStatus_.ONGOING === _authStatus">{{ (_authStatus_.ONGOING === _authStatus) ? 'Authenticating...' : 'Login' }}</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <hr />
+    <div class="row mt-1">
+      <div class="col-xs-6">
+        <button type="button" class="btn btn-block btn-primary">Register</button>
+      </div>
+      <div class="col-xs-6 text-xs-right">
+        <button type="button" name="btn-recovery" class="btn btn-link px-0">Forgot password?</button>
+      </div>
+    </div>
+  </div>
+</div>

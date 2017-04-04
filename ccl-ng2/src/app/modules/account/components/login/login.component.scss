@@ -1,0 +1,74 @@
+#login-reg-card .card {
+    border: 0px;
+    background-color: #fff;
+    width: 40rem;
+    margin:auto;
+    margin-top: 15rem;
+}
+
+.signin-muted-text {
+    font-size: 0.8rem;
+    color: #888 !important;
+}
+
+.form-group {
+    position: relative;
+}
+
+.input-label {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #555;
+    pointer-events: none;
+    transition: all 0.25s ease-in-out;
+}
+
+.login-input {
+    outline: none !important;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 0px;
+    border-bottom: 1px solid #777;
+    transition: border-color 0.25s ease-in-out;
+
+    &:focus {
+        border-color: #371;
+        +.input-label {
+            font-size: 0.7rem;
+            transform: translate(-0.75rem, -1.25rem);
+            color: #371;
+        }
+    }
+
+    &:valid {
+        +.input-label {
+            font-size: 0.7rem;
+            transform: translate(-0.75rem, -1.25rem);
+        }
+    }
+
+    &.danger {
+        border-color: red;
+        +.input-label {
+            font-size: 0.7rem;
+            color: red;
+            font-weight: 500;
+            transform: translate(-0.75rem, -1.25rem);
+        }
+    }
+}
+
+.btn {
+    padding: 0.6rem 0.75rem !important;
+    border-radius: 1.2rem;
+}
+
+.btn-primary {
+    border-color: darken(#371, 10%);
+    &:hover, &:hover:disabled {
+        border-color: darken(#371, 15%);
+    }
+}

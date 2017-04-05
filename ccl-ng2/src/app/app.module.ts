@@ -6,20 +6,17 @@ import { HttpModule } from '@angular/http';
 
 // Routing
 import { AppRoutingModule } from './app.routing';
+import { MainLayoutComponent } from './layouts';
 
 // Components
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './modules/dashboard/dashboard.component';
-import { AccountComponent } from './modules/account/account.component';
 
 // Services
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DashboardComponent,
-    AccountComponent
+    MainLayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +25,6 @@ import { AccountComponent } from './modules/account/account.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [MainLayoutComponent]
 })
 export class AppModule { }

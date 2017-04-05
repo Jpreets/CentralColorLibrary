@@ -9,7 +9,7 @@ import { LoginResponse } from './../../../../shared/model/login-response.model';
 import { AuthService } from './../../../../shared/service/auth.service';
 import { LoginRequest } from './../../../../shared/model/login-request.model';
 import { StorageUtil, StorageType } from './../../../../shared/util';
-import { StorageKeys } from './../../../../shared/constant/storage-keys.constant';
+import { StorageKeys } from './../../../../shared/constant/storage-key.constant';
 
 @Component({
   selector: 'app-login',

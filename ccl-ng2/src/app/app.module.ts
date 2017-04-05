@@ -12,7 +12,7 @@ import { MainLayoutComponent } from './layouts';
 import { AppComponent } from './app.component';
 
 // Services
-
+import { AuthService } from './shared/service/auth.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,9 @@ import { AppComponent } from './app.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [MainLayoutComponent]
 })
 export class AppModule { }

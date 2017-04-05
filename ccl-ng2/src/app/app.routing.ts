@@ -15,8 +15,7 @@ export const APP_ROUTES: Routes = [
     },
     {
         path: 'login',
-        //component : layout.MainLayoutComponent
-        loadChildren: './modules/dashboard/dashboard.module#DashBoardModule'
+        loadChildren: './modules/account/account.module#AccountModule'
     },
     // {
     //     path: 'dashboard',

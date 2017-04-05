@@ -1,7 +1,10 @@
+// Angular 
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+// Application internal
 import { AuthGuard } from './shared/guard';
+import * as layout from './layouts';
 
 // Application Routes
 export const APP_ROUTES: Routes = [
@@ -12,16 +15,17 @@ export const APP_ROUTES: Routes = [
     },
     {
         path: 'login',
-        loadChildren: './modules/account/account.module#AccountModule'
+        //component : layout.MainLayoutComponent
+        loadChildren: './modules/dashboard/dashboard.module#DashBoardModule'
     },
-    {
-        path: 'dashboard',
-        loadChildren: './modules/dashboard/dashboard.module#DashboardModule',
-        data: {
-            title: 'Home'
-        },
-        canActivate: [AuthGuard]
-    },
+    // {
+    //     path: 'dashboard',
+    //     //loadChildren: './modules/dashboard/',
+    //     data: {
+    //         title: 'Home'
+    //     },
+    //     canActivate: [AuthGuard]
+    // },
     {
         path: '**',
         redirectTo: 'login'

@@ -1,18 +1,23 @@
+// Angular
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// Internal Routing
+import { dashboardRouteModule } from './dashboard.routing';
 
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+// Application internal
+import { DashboardLayoutComponent } from './layouts';
+import { NavBarComponent } from "app/modules/dashboard";
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        dashboardRouteModule
     ],
-    exports: [DashboardComponent],
-    declarations: [DashboardComponent],
+    declarations: [DashboardLayoutComponent, NavBarComponent],
     providers: [],
 })
 export class DashBoardModule { }
